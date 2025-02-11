@@ -27,7 +27,7 @@ management:
     logging:
       export:
         enabled: true
-      endpoint: "http://localhost:4318/v1/logs"
+      endpoint: "http://localhost:3100/otlp/v1/logs"
 otel:
   exporter:
     otlp:
@@ -38,7 +38,7 @@ otel:
         endpoint: "http://localhost:4318/v1/traces"
         protocol: http/protobuf
       logs:
-        endpoint: "http://localhost:4318/v1/logs"
+        endpoint: "http://localhost:3100/otlp/v1/logs"
         protocol: http/protobuf
   instrumentation:
     common:
