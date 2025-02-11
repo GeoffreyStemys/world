@@ -1,0 +1,63 @@
+
+server:
+  port: 8080
+
+#logging:
+#  level:
+#    root: DEBUG
+#    org.springframework.jms: DEBUG
+#    com.rabbitmq: DEBUG
+
+management:
+  defaults:
+    metrics:
+      export:
+        enabled: true
+  tracing:
+    enabled: true
+  otlp:
+    metrics:
+      export:
+        enabled: true
+        url:  "http://localhost:4318/v1/metrics"
+        aggregation-temporality: cumulative
+    tracing:
+      export:
+        enabled: false
+    logging:
+      export:
+        enabled: true
+      endpoint: "http://localhost:4318/v1/logs"
+otel:
+  exporter:
+    otlp:
+      metrics:
+        endpoint: "http://localhost:4318/v1/metrics"
+        protocol: http/protobuf
+      traces:
+        endpoint: "http://localhost:4318/v1/traces"
+        protocol: http/protobuf
+      logs:
+        endpoint: "http://localhost:4318/v1/logs"
+        protocol: http/protobuf
+  instrumentation:
+    common:
+      default-enabled: false
+    annotations:
+      enabled: false
+    jdbc:
+      enabled: false
+    logback-appender:
+      enabled: true
+    spring-web:
+      enabled: true
+    spring-webmvc:
+      enabled: true
+    micrometer:
+      enabled: false
+  metrics:
+    exporter: none
+  traces:
+    exporter: none
+  logs:
+    exporter: otlp

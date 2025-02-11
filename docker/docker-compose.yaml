@@ -1,0 +1,49 @@
+services:
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.118.0
+    hostname: otel-collector
+    container_name: otel-collector
+    restart: always
+    command:
+      - --config=/etc/otelcol-contrib/otel-collector.yaml
+    volumes:
+      - ./otel-collector.yaml:/etc/otelcol-contrib/otel-collector.yaml
+    ports:
+      - "1888:1888" # pprof extension
+      - "8888:8888" # Prometheus metrics exposed by the collector
+      - "8889:8889" # Prometheus exporter metrics
+      - "13133:13133" # health_check extension
+      - "4317:4317" # OTLP gRPC receiver
+      - "4318:4318" # OTLP http receiver
+      - "55679:55679" # zpages extension
+  prometheus:
+    image: prom/prometheus:v2.55.1
+    hostname: prometheus
+    container_name: prometheus
+    restart: always
+    command:
+      - --config.file=/etc/prometheus/prometheus.yaml
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yaml
+    ports:
+      - "9090:9090"
+
+  loki:
+    image: grafana/loki:latest
+    hostname: loki
+    container_name: loki
+    command: -config.file=/etc/loki/config/local-config.yaml
+    volumes:
+      - ./loki-local.yaml:/etc/loki/config/local-config.yaml
+    ports:
+      - "3100:3100"
+
+  grafana:
+    image: grafana/grafana:11.5.1
+    hostname: grafana
+    container_name: grafana
+    volumes:
+      - ./grafana.yaml:/etc/grafana/provisioning/datasources/datasources.yml
+    ports:
+      - "3000:3000"

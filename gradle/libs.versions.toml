@@ -1,0 +1,13 @@
+[versions]
+kotlinLogging = "7.0.3"
+eclipseKuraCloud = "1.3.0"
+eclipseKuraApi = "2.4.0"
+eclipseTaho = "1.2.5"
+eclipseKuraCore = "1.2.1"
+
+[libraries]
+kotlinLogging = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlinLogging" }
+eclipseKuraCloud = { module = "org.eclipse.kura:org.eclipse.kura.core.cloud", version.ref = "eclipseKuraCloud" }
+eclipseKuraApi = { module = "org.eclipse.kura:org.eclipse.kura.api", version.ref = "eclipseKuraApi" }
+eclipseKuraCore = { module = "org.eclipse.kura:org.eclipse.kura.core", version.ref = "eclipseKuraCore" }
+eclipseTaho = { module = "org.eclipse.paho:org.eclipse.paho.client.mqttv3", version.ref = "eclipseTaho" }
