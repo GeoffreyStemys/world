@@ -52,10 +52,10 @@ class WorldController(
     }
 
     private fun randomLogs() = when (Random.nextInt(0, 3)) {
-        2 -> "\uD83D\uDEA8 error world".also { logger.error { it } }
-        1 -> "⚠\uFE0F warn world".also { logger.warn { it } }
-        0 -> "\uD83E\uDD73 Congratulation world".also { logger.info { it } }
-        else -> "\uD83E\uDEB2 bug world".also { logger.debug { it } }
+        2 -> "\uD83D\uDEA8 error plaz basic auth".also { logger.error { it } }
+        1 -> "⚠\uFE0F warn plaz basic auth".also { logger.warn { it } }
+        0 -> "\uD83E\uDD73 Congratulation plaz basic auth".also { logger.info { it } }
+        else -> "\uD83E\uDEB2 bug plaz basic auth".also { logger.debug { it } }
     }
 
 }
