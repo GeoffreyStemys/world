@@ -15,26 +15,4 @@ class OtelConfig(
   @Bean
   fun meter(): Meter = otel.getMeter("toto.custom")
 
-
-//  @Bean
-//  fun configureOtelWithBasicAuth(): OtlpHttpLogRecordExporter {
-//    val username = "toto"
-//    val password = "toto"
-//     val basicAuthHeader = "Basic " + Base64.getEncoder().encodeToString("$username:$password".toByteArray())
-//    val basicAuthHeader = "Basic $username:$password"
-//
-//    val logExporter = OtlpHttpLogRecordExporter.builder()
-//      .addHeader("Authorization", basicAuthHeader)
-//      .setEndpoint("https://plaz-monitoring-loki.sandbox.cloud.stemys.ch/otlp/v1/logs")
-//      .build()
-//    return logExporter
-//
-//    val logProcessor = BatchLogRecordProcessor.builder(logExporter).build()
-//
-//    val loggerProvider = SdkLoggerProvider.builder()
-//      .addLogRecordProcessor(logProcessor)
-//      .build()
-//    return loggerProvider
-//  }
-
 }
