@@ -1,4 +1,3 @@
-
 server:
   port: 8080
 
@@ -9,6 +8,16 @@ server:
 #    com.rabbitmq: DEBUG
 
 management:
+  endpoint.health.probes.enabled: true
+  endpoints.web:
+    exposure.include: "*"
+    base-path: /actuator
+  health:
+    db:
+      # FIXME This should be enabled in production
+      enabled: false
+    defaults:
+      enabled: true
   defaults:
     metrics:
       export:
@@ -29,6 +38,9 @@ management:
         enabled: true
       endpoint: "http://localhost:3100/otlp/v1/logs"
 otel:
+  metric:
+    export:
+      interval: 15s
   exporter:
     otlp:
       metrics:
