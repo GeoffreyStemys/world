@@ -1,4 +1,4 @@
-package ch.brw.hive.world.world
+package ch.brw.hive.world.service
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.core.env.ConfigurableEnvironment

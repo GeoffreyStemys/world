@@ -1,4 +1,4 @@
-package ch.brw.hive.world.world
+package ch.brw.hive.world.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

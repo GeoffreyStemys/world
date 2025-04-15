@@ -1,4 +1,4 @@
-package ch.brw.hive.world.world
+package ch.brw.hive.world.service
 
 //import org.springframework.stereotype.Component
 //import org.springframework.jms.annotation.JmsListener

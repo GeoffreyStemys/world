@@ -52,6 +52,8 @@ otel:
       logs:
         endpoint: "https://plaz-monitoring-loki.sandbox.cloud.stemys.ch/otlp/v1/logs"
         protocol: http/protobuf
+        headers:
+            "Authorization": "Basic dG90bzp0b3Rv"
   instrumentation:
     common:
       default-enabled: false

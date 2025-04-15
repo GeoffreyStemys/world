@@ -1,4 +1,4 @@
-//package ch.brw.hive.hello.world
+package ch.brw.hive.world.service//package ch.brw.hive.hello.world
 //
 //import mu.KotlinLogging.logger
 //import org.fusesource.mqtt.client.MQTT
