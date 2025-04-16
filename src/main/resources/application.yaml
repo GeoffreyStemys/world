@@ -12,31 +12,31 @@ management:
   endpoints.web:
     exposure.include: "*"
     base-path: /actuator
-  health:
-    db:
-      # FIXME This should be enabled in production
-      enabled: false
-    defaults:
-      enabled: true
-  defaults:
-    metrics:
-      export:
-        enabled: true
-  tracing:
-    enabled: true
-  otlp:
-    metrics:
-      export:
-        enabled: true
-        url:  "http://localhost:4318/v1/metrics"
-        aggregation-temporality: cumulative
-    tracing:
-      export:
-        enabled: false
-    logging:
-      export:
-        enabled: true
-      endpoint: "https://plaz-monitoring-loki.sandbox.cloud.stemys.ch/otlp/v1/logs"
+#  health:
+#    db:
+#      # FIXME This should be enabled in production
+#      enabled: false
+#    defaults:
+#      enabled: true
+#  defaults:
+#    metrics:
+#      export:
+#        enabled: true
+#  tracing:
+#    enabled: true
+#  otlp:
+#    metrics:
+#      export:
+#        enabled: true
+#        url:  "http://localhost:4318/v1/metrics"
+#        aggregation-temporality: cumulative
+#    tracing:
+#      export:
+#        enabled: false
+#    logging:
+#      export:
+#        enabled: true
+#      endpoint: "http://localhost:3100/otlp/v1/logs"
 otel:
   metric:
     export:
@@ -50,7 +50,7 @@ otel:
         endpoint: "http://localhost:4318/v1/traces"
         protocol: http/protobuf
       logs:
-        endpoint: "https://plaz-monitoring-loki.sandbox.cloud.stemys.ch/otlp/v1/logs"
+        endpoint: "http://localhost:3100/otlp/v1/logs"
         protocol: http/protobuf
         headers:
             "Authorization": "Basic dG90bzp0b3Rv"
