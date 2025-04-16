@@ -16,7 +16,7 @@ Start spring app:
 ```
 
 ```shell
-./gradlew jibPushDockerHub -Psemver.stage=final -Psemver.scope=minor
+./gradlew jibBuildLocal -Psemver.stage=final -Psemver.scope=minor
 ```
 
 ```shell
@@ -58,3 +58,9 @@ target_info
 https://betterstack.com/community/guides/observability/opentelemetry-collector/
 http://localhost:55679/debug/tracez
 https://www.otelbin.io/
+
+```shell
+TAG="1.0.0"
+git tag -d $TAG
+git push --delete origin $TAG
+```
