@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8888
 
 #logging:
 #  level:
@@ -50,10 +50,10 @@ otel:
         endpoint: "http://localhost:4318/v1/traces"
         protocol: http/protobuf
       logs:
-        endpoint: "http://localhost:3100/otlp/v1/logs"
+        endpoint: "https://loki-monitoring.plaz.stemys.ch/otlp/v1/logs"
         protocol: http/protobuf
         headers:
-            "Authorization": "Basic dG90bzp0b3Rv"
+            "Authorization": "Basic cGxhei1hZG1pbjpIWVNxaTY3UnJuNkx5NFk="
   instrumentation:
     common:
       default-enabled: false
