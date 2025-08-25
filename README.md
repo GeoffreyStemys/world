@@ -25,7 +25,7 @@ curl http://localhost:8080/world/
 
 ### Some useful gradle plugins tasks
 
-- Build local docker images: `./gradlew jibBuildLocal -xtest`
+- Build local docker images: `./gradlew jibBuildLocal -xtest -Psemver.stage=final -Psemver.scope=minor`
 - Build images and push in aws ecr: `./gradlew jibPushAwsEcr -xtest -Psemver.stage=snapshot`
 - Publish snapshot jars in nexus: `./gradlew publish -xtest`
 - Stop all hidden gradle daemons: `./gradlew --stop`
