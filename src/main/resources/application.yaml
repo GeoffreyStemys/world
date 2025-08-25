@@ -18,10 +18,10 @@ management:
 #      enabled: false
 #    defaults:
 #      enabled: true
-#  defaults:
-#    metrics:
-#      export:
-#        enabled: true
+  defaults:
+    metrics:
+      export:
+        enabled: true
 #  tracing:
 #    enabled: true
 #  otlp:
@@ -70,8 +70,8 @@ otel:
     micrometer:
       enabled: false
   metrics:
-    exporter: none
+    exporter: otlp
   traces:
     exporter: none
   logs:
-    exporter: otlp
+    exporter: none
