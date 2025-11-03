@@ -40,7 +40,8 @@ class WorldController(
 
   @GetMapping(value = ["/"])
   fun get(): ResponseEntity<String> {
-    val message = randomLogs()
+//    val message = randomLogs()
+    val message = "you reached the app !!"
     return ResponseEntity.ok(message + "\n")
   }
 

@@ -20,13 +20,18 @@ Start spring app:
 ```
 
 ```shell
-curl http://localhost:8080/world/
+curl http://localhost:8888/hello/
 ```
 
 ### Some useful gradle plugins tasks
 
 - Build local docker images: `./gradlew jibBuildLocal -xtest -Psemver.stage=final -Psemver.scope=minor`
-- Build images and push in aws ecr: `./gradlew jibPushAwsEcr -xtest -Psemver.stage=snapshot`
+
+```shell
+docker tag stemysio/world:1.1.0  stemysio/hello:1.1.0
+docker push stemysio/hello:1.1.0
+```
+
 - Publish snapshot jars in nexus: `./gradlew publish -xtest`
 - Stop all hidden gradle daemons: `./gradlew --stop`
 
